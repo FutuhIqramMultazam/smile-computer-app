@@ -25,8 +25,8 @@ $ds_teknisi_disarankan 			    = htmlspecialchars($_POST['ds_teknisi_disarankan']
 $ds_cabang 							= htmlspecialchars($_POST['ds_cabang']);
 
 
-    
-		$query = "insert INTO data_servis SET
+
+$query = "INSERT INTO data_servis SET
 					ds_nota 							= '$ds_nota_count',
 					ds_nota_count 						= '$ds_nota_count',
 					ds_customer_id 						= '$ds_customer_id',
@@ -68,12 +68,10 @@ $ds_cabang 							= htmlspecialchars($_POST['ds_cabang']);
 					ds_cabang 							= '$ds_cabang'
 				";
 
-		mysqli_query($conn, $query)
-		or die ("Gagal Perintah SQL".mysql_error());
-		
-    $data['hasil'] = 'sukses';
-    
+mysqli_query($conn, $query)
+	or die("Gagal Perintah SQL" . mysql_error());
+
+$data['hasil'] = 'sukses';
+
 
 echo json_encode($data);
-
-?>
